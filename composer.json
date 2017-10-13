@@ -1,0 +1,38 @@
+{
+    "name": "local-dynamics/laravel-bootstrap4-components",
+    "description": "Bootstrap components for Laravel",
+    "minimum-stability": "stable",
+    "license": "MIT",
+    "type": "library",
+    "keywords": [
+        "bootstrap",
+        "blade",
+        "laravel"
+    ],
+    "authors": [
+        {
+            "name": "Thomas Enßner",
+            "email": "thomas.enssner@local-dynamics.de"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "LocalDynamics\\Bootstrap4Components\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=7.1",
+        "laravel/framework": "~5.5",
+        "appstract/laravel-blade-directives": "^0.5"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LocalDynamics\\Bootstrap4Components\\BootstrapComponentsServiceProvider"
+            ]
+        }
+    }
+}
