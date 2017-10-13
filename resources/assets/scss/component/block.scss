@@ -21,4 +21,33 @@ div.block-group {
             background-color: $bg-uneven;
         }
     }
+
+    &.l-100 div.row.block-row div.block-left {
+        width: 100px;
+    }
+    &.l-125 div.row.block-row div.block-left {
+        width: 125px;
+    }
+    &.l-150 div.row.block-row div.block-left {
+        width: 150px;
+    }
+    &.l-175 div.row.block-row div.block-left {
+        width: 175px;
+    }
+    &.l-200 div.row.block-row div.block-left {
+        width: 200px;
+    }
+    &.l-225 div.row.block-row div.block-left {
+        width: 225px;
+    }
+    &.l-250 div.row.block-row div.block-left {
+        width: 250px;
+    }
+    &.l-275 div.row.block-row div.block-left {
+        width: 275px;
+    }
+    &.l-300 div.row.block-row div.block-left {
+        width: 300px;
+    }
+
 }
