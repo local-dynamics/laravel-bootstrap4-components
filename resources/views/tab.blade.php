@@ -1,8 +1,7 @@
 @php
-    $active =  $activeTab->active;
-    $activeTab->active = false;
+    $active = $tabHelper->active;
+    $tabHelper->active = false;
 @endphp
-
 <div class="tab-pane @if($active ?? false) show active @endif"
      id="{{ $key }}"
      role="tabpanel"

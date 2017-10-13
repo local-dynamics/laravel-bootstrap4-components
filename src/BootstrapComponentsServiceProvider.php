@@ -20,6 +20,14 @@ class BootstrapComponentsServiceProvider extends ServiceProvider
                 __DIR__ . '/../resources/views' => resource_path('views/vendor/bsComp'),
             ], 'views');
         }
+
+        $tabHelper = new class { public $active = true; };
+        \View::composer('bsComp::tabs', function (View $view) use ($tabHelper) {
+            $view->with('tabHelper', $tabHelper);
+        });
+        \View::composer('bsComp::tab', function (View $view) use ($tabHelper) {
+            $view->with('tabHelper', $tabHelper);
+        });
     }
 
     /**

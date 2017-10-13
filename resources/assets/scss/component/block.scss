@@ -1,0 +1,24 @@
+div.block-group {
+    border: 1px solid $border-color;
+
+    div.row.block-row {
+
+        div.block-left {
+            min-height:       35px;
+            font-weight:      600;
+            background-color: rgba(0, 111, 157, 0.05);
+        }
+
+        div.block-right {
+            min-height: 35px;
+        }
+
+        &:nth-child(even) {
+            background-color: $bg-even;
+        }
+
+        &:nth-child(odd) {
+            background-color: $bg-uneven;
+        }
+    }
+}

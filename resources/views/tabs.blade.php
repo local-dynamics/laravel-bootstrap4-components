@@ -1,6 +1,9 @@
 <div class="card">
     <div class="card-header">
-        <ul class="nav nav-tabs card-header-tabs" @if($id ?? false) id="{{ $id }}" @endif role="tablist">
+        <ul class="nav nav-tabs card-header-tabs"
+            role="tablist"
+            @isset($id) id="{{ $id }}" @endisset
+        >
             @foreach($tabs as $tabId => $tabLabel)
                 <li class="nav-item">
                     <a class="nav-link @if($loop->first) active @endif"
@@ -8,17 +11,19 @@
                        data-toggle="tab"
                        href="#{{ $tabId }}"
                        role="tab"
-                       aria-controls="{{ $tabId  }}"
-                       aria-expanded="true">{{ $tabLabel }}</a>
+                       aria-controls="{{ $tabId }}"
+                       aria-expanded="true"
+                    >{{ $tabLabel }}</a>
                 </li>
             @endforeach
         </ul>
     </div>
     <div class="tab-content card-body" id="myTabContent">
-        {!! $slot !!}
+        {{ $slot }}
     </div>
 </div>
 
 @php
-    $activeTab->active = true;
+    // Reset tabHelper
+    $tabHelper->active = true;
 @endphp
