@@ -23,10 +23,10 @@ class BootstrapComponentsServiceProvider extends ServiceProvider
         }
 
         $tabHelper = new class { public $active = true; };
-        View::composer('bsComp::tabs', function (View $view) use ($tabHelper) {
+        \View::composer('bsComp::tabs', function ($view) use ($tabHelper) {
             $view->with('tabHelper', $tabHelper);
         });
-        View::composer('bsComp::tab', function (View $view) use ($tabHelper) {
+        \View::composer('bsComp::tab', function ($view) use ($tabHelper) {
             $view->with('tabHelper', $tabHelper);
         });
     }
