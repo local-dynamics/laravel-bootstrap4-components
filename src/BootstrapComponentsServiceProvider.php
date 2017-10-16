@@ -4,6 +4,7 @@ namespace LocalDynamics\Bootstrap4Components;
 
 use Appstract\BladeDirectives\BladeDirectivesServiceProvider;
 use Illuminate\Support\ServiceProvider;
+use View;
 
 class BootstrapComponentsServiceProvider extends ServiceProvider
 {
@@ -22,10 +23,10 @@ class BootstrapComponentsServiceProvider extends ServiceProvider
         }
 
         $tabHelper = new class { public $active = true; };
-        \View::composer('bsComp::tabs', function (View $view) use ($tabHelper) {
+        View::composer('bsComp::tabs', function (View $view) use ($tabHelper) {
             $view->with('tabHelper', $tabHelper);
         });
-        \View::composer('bsComp::tab', function (View $view) use ($tabHelper) {
+        View::composer('bsComp::tab', function (View $view) use ($tabHelper) {
             $view->with('tabHelper', $tabHelper);
         });
     }
