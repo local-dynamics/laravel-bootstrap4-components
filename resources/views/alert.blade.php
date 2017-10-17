@@ -7,6 +7,7 @@
          "
         role="alert"
         @isset($id) id="{{ $id }}" @endisset
+        @isset($style) style="{{ $style }}" @endisset
 >
     @istrue($dismissible)
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">

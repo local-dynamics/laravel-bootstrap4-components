@@ -5,6 +5,7 @@
            @isset($id) id="{{ $id }}" @endisset
            @isset($name) name="{{ $name }}" @endisset
            @istrue($checked) checked="checked" @endistrue
+           @isset($style) style="{{ $style }}" @endisset
     >
     <span class="custom-control-indicator"></span>
     <span class="custom-control-description">{{ $label ?? '' }}</span>

@@ -1,9 +1,9 @@
-<div class="card">
+<div class="card {{ $class ?? '' }}"
+     @isset($id) id="{{ $id }}" @endisset
+     @isset($style) style="{{ $style }}" @endisset
+>
     <div class="card-header">
-        <ul class="nav nav-tabs card-header-tabs"
-            role="tablist"
-            @isset($id) id="{{ $id }}" @endisset
-        >
+        <ul class="nav nav-tabs card-header-tabs" role="tablist">
             @foreach($tabs as $tabId => $tabLabel)
                 <li class="nav-item">
                     <a class="nav-link @if($loop->first) active @endif"
@@ -18,7 +18,7 @@
             @endforeach
         </ul>
     </div>
-    <div class="tab-content card-body" id="myTabContent">
+    <div class="tab-content card-body">
         {{ $slot }}
     </div>
 </div>

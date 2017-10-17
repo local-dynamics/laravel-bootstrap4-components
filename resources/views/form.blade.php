@@ -9,7 +9,10 @@
 <form
         method="{{ $method }}"
         action="{{ $action ?? '' }}"
-        @isset($id) id="{{ $id }}" @endisset>
+        @isset($id) id="{{ $id }}" @endisset
+        @isset($class) class="{{ $class }}" @endisset
+        @isset($style) style="{{ $style }}" @endisset
+>
     @if(($addCsrf ?? true) && $method != 'GET') {{ csrf_field() }} @endif
     @istrue($methodOverwrite) {{ method_field($methodOverwrite) }} @endistrue
     {{ $slot }}

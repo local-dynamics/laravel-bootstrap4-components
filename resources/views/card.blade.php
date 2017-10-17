@@ -4,6 +4,7 @@
             {{ $class ?? '' }}
         "
         @isset($id) id="{{ $id }}" @endisset
+        @isset($style) style="{{ $style }}" @endisset
 >
     @isset($header)
         <div class="card-header">{{ $header }}</div>

@@ -1,4 +1,7 @@
-<div class="row">
+<div class="row {{ $class ?? '' }}"
+     @isset($id) id="{{ $id }}" @endisset
+     @isset($style) style="{{ $style }}" @endisset
+>
     <div class="col">
         <div class="icon">
             <div class="icon-content">{{ $icon ?? '' }}</div>
