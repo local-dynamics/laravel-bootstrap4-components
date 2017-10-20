@@ -18,7 +18,7 @@
             @endforeach
         </ul>
     </div>
-    <div class="tab-content card-body">
+    <div class="tab-content card-body {{ $bodyClass ?? '' }}">
         {{ $slot }}
     </div>
 </div>

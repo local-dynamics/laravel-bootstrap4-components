@@ -10,7 +10,7 @@
         <div class="card-header">{{ $header }}</div>
     @endisset
 
-    <div class="card-body">
+    <div class="card-body {{ $bodyClass ?? '' }}">
         @isset($title)
             <h4 class="card-title">{{ $title }}</h4>
         @endisset
