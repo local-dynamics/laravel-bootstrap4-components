@@ -1,3 +1,8 @@
+@php
+    if (isset($labelTooltip) == false && strlen($label ?? '') > 20) {
+        $labelTooltip = $label ?? '';
+    }
+@endphp
 <div class="block-row row rounded {{ $class ?? '' }}"
      @isset($id) id="{{ $id }}" @endisset
      @isset($style) style="{{ $style }}" @endisset
