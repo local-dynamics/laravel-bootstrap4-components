@@ -1,6 +1,6 @@
 <?php
 $id = $id ?? 'input-date-' . rand(10000000000, 99999999999);
-$format = $format ?? 'YYYY-MM-DD'
+$format = $format ?? 'YYYY-MM-DD HH:mm:ss'
 ?>
 <input class="form-control {{ $class ?? '' }}"
        value="{{ $slot ?? '' }}"
@@ -12,8 +12,7 @@ $format = $format ?? 'YYYY-MM-DD'
 >
 <script>
     (function() {
-        var config =
-                {
+        var config = {
                     "singleDatePicker":                true,
                     "showDropdowns":                   true,
                     "showISOWeekNumbers":              true,
