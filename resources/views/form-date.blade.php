@@ -1,6 +1,7 @@
 <?php
 $id = $id ?? 'input-date-' . mt_rand(10000000000, 99999999999);
-$format = $format ?? 'YYYY-MM-DD'
+$format = $format ?? 'YYYY-MM-DD';
+$placeholder = $placeholder ?? $format;
 ?>
 <div class="input-group">
     <span class="input-group-addon" id="{{ $id }}-addon1"><span class="glyphicons glyphicons-calendar"></span></span>
@@ -8,9 +9,9 @@ $format = $format ?? 'YYYY-MM-DD'
            value="{{ $slot ?? '' }}"
            id="{{ $id }}"
            aria-describedby="{{ $id }}-addon1"
+           placeholder="{{ $placeholder }}"
            @isset($type) type="{{ $type }}" @endisset
            @isset($name) name="{{ $name }}" @endisset
-           @isset($placeholder) placeholder="{{ $placeholder }}" @endisset
            @isset($style) style="{{ $style }}" @endisset
     >
 </div>
@@ -52,7 +53,6 @@ $format = $format ?? 'YYYY-MM-DD'
             $input.on('apply.daterangepicker', function(ev, picker) {
                 $input.val(picker.startDate.format('{{ $format }}'));
             });
-
         } catch (e) {
             document.addEventListener("DOMContentLoaded", function() {
                 $('#{{$id}}').daterangepicker(config);
