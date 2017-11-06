@@ -1,5 +1,5 @@
 <?php
-$id = $id ?? 'input-date-' . rand(10000000000, 99999999999);
+$id = $id ?? 'input-date-' . mt_rand(10000000000, 99999999999);
 $format = $format ?? 'YYYY-MM-DD'
 ?>
 <input class="form-control {{ $class ?? '' }}"
@@ -13,35 +13,42 @@ $format = $format ?? 'YYYY-MM-DD'
 <script>
     (function() {
         var config = {
-                    "singleDatePicker":                true,
-                    "showDropdowns":                   true,
-                    "showISOWeekNumbers":              true,
-                    "showCustomRangeLabel":            false,
-                    @isset($startDate)"startDate":     "{{$startDate}}", @endisset
-                    @isset($endDate)"endDate":          "{{$endDate}}", @endisset
-                    "locale":                          {
-                        "format":           "{{$format}}",
-                        "separator":        " - ",
-                        "applyLabel":       "Ok",
-                        "cancelLabel":      "Abbrechen",
-                        "fromLabel":        "Von",
-                        "toLabel":          "Bis",
-                        "customRangeLabel": "Custom",
-                        "weekLabel":        "W",
-                        "daysOfWeek":       [
-                            "So",
-                            "Mo",
-                            "Di",
-                            "Mi",
-                            "Do",
-                            "Fr",
-                            "Sa"
-                        ]
-                    }
-                };
+            "singleDatePicker":                true,
+            "showDropdowns":                   true,
+            "showISOWeekNumbers":              true,
+            "showCustomRangeLabel":            false,
+            "autoUpdateInput":                 false,
+            "autoApply":                       true,
+            @isset($startDate)"startDate":     "{{$startDate}}", @endisset
+            @isset($endDate)"endDate": "{{$endDate}}", @endisset
+            "locale":                          {
+                "format":           "{{$format}}",
+                "separator":        " - ",
+                "applyLabel":       "Ok",
+                "cancelLabel":      "Abbrechen",
+                "fromLabel":        "Von",
+                "toLabel":          "Bis",
+                "customRangeLabel": "Custom",
+                "weekLabel":        "W",
+                "daysOfWeek":       [
+                    "So",
+                    "Mo",
+                    "Di",
+                    "Mi",
+                    "Do",
+                    "Fr",
+                    "Sa"
+                ]
+            }
+        };
 
         try {
-            $('#{{$id}}').daterangepicker(config);
+            var $input = $('#{{$id}}');
+            $input.daterangepicker(config);
+            $input.on('apply.daterangepicker', function(ev, picker) {
+                $input.val(picker.startDate.format('{{ $format }}'));
+            });
+
         } catch (e) {
             document.addEventListener("DOMContentLoaded", function() {
                 $('#{{$id}}').daterangepicker(config);
