@@ -6,8 +6,8 @@ $format = $format ?? 'YYYY-MM-DD'
     <span class="input-group-addon" id="{{ $id }}-addon1"><span class="glyphicons glyphicons-calendar"></span></span>
     <input class="form-control {{ $class ?? '' }}"
            value="{{ $slot ?? '' }}"
-           aria-describedby="{{ $id }}-addon1"
            id="{{ $id }}"
+           aria-describedby="{{ $id }}-addon1"
            @isset($type) type="{{ $type }}" @endisset
            @isset($name) name="{{ $name }}" @endisset
            @isset($placeholder) placeholder="{{ $placeholder }}" @endisset
