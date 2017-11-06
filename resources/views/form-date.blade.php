@@ -2,14 +2,18 @@
 $id = $id ?? 'input-date-' . mt_rand(10000000000, 99999999999);
 $format = $format ?? 'YYYY-MM-DD'
 ?>
-<input class="form-control {{ $class ?? '' }}"
-       value="{{ $slot ?? '' }}"
-       @isset($type) type="{{ $type }}" @endisset
-       @isset($id) id="{{ $id }}" @endisset
-       @isset($name) name="{{ $name }}" @endisset
-       @isset($placeholder) placeholder="{{ $placeholder }}" @endisset
-       @isset($style) style="{{ $style }}" @endisset
->
+<div class="input-group">
+    <span class="input-group-addon" id="{{ $id }}-addon1"><span class="glyphicons glyphicons-calendar"></span></span>
+    <input class="form-control {{ $class ?? '' }}"
+           value="{{ $slot ?? '' }}"
+           aria-describedby="{{ $id }}-addon1"
+           id="{{ $id }}"
+           @isset($type) type="{{ $type }}" @endisset
+           @isset($name) name="{{ $name }}" @endisset
+           @isset($placeholder) placeholder="{{ $placeholder }}" @endisset
+           @isset($style) style="{{ $style }}" @endisset
+    >
+</div>
 <script>
     (function() {
         var config = {
