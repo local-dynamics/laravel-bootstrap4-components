@@ -24,6 +24,8 @@ $placeholder = $placeholder ?? $format;
             "showCustomRangeLabel":            false,
             "autoUpdateInput":                 false,
             "autoApply":                       true,
+            "timePicker":                      true,
+            "timePicker24Hour":                true,
             @isset($startDate)"startDate":     "{{$startDate}}", @endisset
             @isset($endDate)"endDate": "{{$endDate}}", @endisset
             "locale":                          {
