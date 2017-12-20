@@ -55,7 +55,11 @@ $placeholder = $placeholder ?? $format;
             });
         } catch (e) {
             document.addEventListener("DOMContentLoaded", function() {
-                $('#{{$id}}').daterangepicker(config);
+                var $input = $('#{{$id}}');
+                $input.daterangepicker(config);
+                $input.on('apply.daterangepicker', function(ev, picker) {
+                    $input.val(picker.startDate.format('{{ $format }}'));
+                });
             });
         }
     })();
