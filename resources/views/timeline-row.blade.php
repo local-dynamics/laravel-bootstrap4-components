@@ -4,7 +4,7 @@
 >
     <div class="col">
         <div class="icon">
-            <div class="icon-content">{{ $icon ?? '' }}</div>
+            <div class="icon-content">{!! $icon ?? '' !!}</div>
         </div>
         <div class="card">
             <div class="card-body">
