@@ -4,11 +4,9 @@ namespace LocalDynamics\Bootstrap4Components;
 
 use Appstract\BladeDirectives\BladeDirectivesServiceProvider;
 use Illuminate\Support\ServiceProvider;
-use View;
 
 class BootstrapComponentsServiceProvider extends ServiceProvider
 {
-
     /**
      * Bootstrap the application services.
      */
@@ -40,4 +38,5 @@ class BootstrapComponentsServiceProvider extends ServiceProvider
     {
         $this->app->register(BladeDirectivesServiceProvider::class);
     }
+    
 }
