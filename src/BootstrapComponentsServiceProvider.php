@@ -14,15 +14,17 @@ class BootstrapComponentsServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'bsComp');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'bsComp');
 
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__ . '/../resources/views' => resource_path('views/vendor/bsComp'),
+                __DIR__.'/../resources/views' => resource_path('views/vendor/bsComp'),
             ], 'views');
         }
 
-        $tabHelper = new class { public $active = true; };
+        $tabHelper = new class() {
+            public $active = true;
+        };
         \View::composer('bsComp::tabs', function ($view) use ($tabHelper) {
             $view->with('tabHelper', $tabHelper);
         });
