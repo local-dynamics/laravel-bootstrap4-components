@@ -38,5 +38,4 @@ class BootstrapComponentsServiceProvider extends ServiceProvider
     {
         $this->app->register(BladeDirectivesServiceProvider::class);
     }
-    
 }
