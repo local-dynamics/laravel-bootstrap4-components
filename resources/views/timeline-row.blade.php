@@ -6,7 +6,7 @@
         <div class="icon">
             <div class="icon-content">{!! $icon ?? '' !!}</div>
         </div>
-        <div class="card">
+        <div class="card {{ $cardClass ?? '' }}">
             <div class="card-body">
                 <h5 class="card-title">{{ $title ?? '' }}</h5>
                 <p class="card-text timeline-pre">{{ $slot }}</p>
