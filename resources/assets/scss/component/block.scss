@@ -1,8 +1,7 @@
 div.block-group {
-    border: 1px solid $border-color;
+    border: $card-border-width solid $card-border-color;
 
     div.row.block-row {
-
         div.block-left {
             min-height:       35px;
             font-weight:      600;
@@ -49,5 +48,4 @@ div.block-group {
     &.l-300 div.row.block-row div.block-left {
         width: 300px;
     }
-
 }
