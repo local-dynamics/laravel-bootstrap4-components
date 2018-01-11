@@ -21,6 +21,15 @@ div.block-group {
         }
     }
 
+    &.l-25 div.row.block-row div.block-left {
+        width: 25px;
+    }
+    &.l-50 div.row.block-row div.block-left {
+        width: 50px;
+    }
+    &.l-75 div.row.block-row div.block-left {
+        width: 75px;
+    }
     &.l-100 div.row.block-row div.block-left {
         width: 100px;
     }
