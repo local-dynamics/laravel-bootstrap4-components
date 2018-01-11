@@ -9,7 +9,7 @@
         <div class="card {{ $cardClass ?? '' }}">
             <div class="card-body">
                 <h5 class="card-title">
-                    {{ $title ?? '' }}
+                    {!! $title ?? '' !!}
                     <small class="text-muted">
                         <i>am</i> {{ $time ?? '' }} von {!! $author ?? '' !!}
                     </small>
