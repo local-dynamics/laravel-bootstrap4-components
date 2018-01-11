@@ -21,40 +21,10 @@ div.block-group {
         }
     }
 
-    &.l-25 div.row.block-row div.block-left {
-        width: 25px;
-    }
-    &.l-50 div.row.block-row div.block-left {
-        width: 50px;
-    }
-    &.l-75 div.row.block-row div.block-left {
-        width: 75px;
-    }
-    &.l-100 div.row.block-row div.block-left {
-        width: 100px;
-    }
-    &.l-125 div.row.block-row div.block-left {
-        width: 125px;
-    }
-    &.l-150 div.row.block-row div.block-left {
-        width: 150px;
-    }
-    &.l-175 div.row.block-row div.block-left {
-        width: 175px;
-    }
-    &.l-200 div.row.block-row div.block-left {
-        width: 200px;
-    }
-    &.l-225 div.row.block-row div.block-left {
-        width: 225px;
-    }
-    &.l-250 div.row.block-row div.block-left {
-        width: 250px;
-    }
-    &.l-275 div.row.block-row div.block-left {
-        width: 275px;
-    }
-    &.l-300 div.row.block-row div.block-left {
-        width: 300px;
+    @for $i from 1 through 60 {
+        $width: 5 * $i + 20;
+        &.l-{$width} div.row.block-row div.block-left {
+            width: $width;
+        }
     }
 }
