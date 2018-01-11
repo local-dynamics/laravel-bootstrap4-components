@@ -6,9 +6,9 @@
         $labelTop = false;
     }
     if($labelTop) {
-        $labelStyle = 'block-left align-items-top px-2 py-1';
+        $labelStyle = 'block-left align-self-top px-2 py-1';
     } else {
-        $labelStyle = 'block-left align-items-center px-2 py-1';
+        $labelStyle = 'block-left align-self-center px-2 py-1';
     }
 @endphp
 <div class="block-row row rounded {{ $class ?? '' }} d-flex "
