@@ -6,12 +6,12 @@
         $labelTop = false;
     }
     if($labelTop) {
-        $labelStyle = 'block-left d-flex align-items-top px-2 py-1';
+        $labelStyle = 'block-left align-items-top px-2 py-1';
     } else {
-        $labelStyle = 'block-left d-flex align-items-center px-2 py-1';
+        $labelStyle = 'block-left align-items-center px-2 py-1';
     }
 @endphp
-<div class="block-row row rounded {{ $class ?? '' }}"
+<div class="block-row row rounded {{ $class ?? '' }} d-flex "
      @isset($id) id="{{ $id }}" @endisset
      @isset($style) style="{{ $style }}" @endisset
 >
@@ -22,7 +22,7 @@
             {{ $label ?? '' }}
         </div>
     </div>
-    <div class="block-right col d-flex align-items-center px-2 py-1">
+    <div class="block-right col align-items-center px-2 py-1">
         {{ $slot }}
     </div>
 </div>
