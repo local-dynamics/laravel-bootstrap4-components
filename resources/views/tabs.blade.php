@@ -1,4 +1,4 @@
-<div class="card {{ $class ?? '' }}"
+<div class="card card-tabs {{ $class ?? '' }}"
      @isset($id) id="{{ $id }}" @endisset
      @isset($style) style="{{ $style }}" @endisset
 >
