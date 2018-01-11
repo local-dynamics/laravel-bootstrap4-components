@@ -23,8 +23,8 @@ div.block-group {
 
     @for $i from 1 through 60 {
         $width: 5 * $i + 20;
-        &.l-{$width} div.row.block-row div.block-left {
-            width: $width;
+        &.l-#{$width} div.row.block-row div.block-left {
+            width: $width * 1px;
         }
     }
 }
