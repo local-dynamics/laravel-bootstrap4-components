@@ -8,9 +8,13 @@
         </div>
         <div class="card {{ $cardClass ?? '' }}">
             <div class="card-body">
-                <h5 class="card-title">{{ $title ?? '' }}</h5>
+                <h5 class="card-title">
+                    {{ $title ?? '' }}
+                    <small class="text-muted">
+                        <i>am</i> {{ $time ?? '' }} von {!! $author ?? '' !!}
+                    </small>
+                </h5>
                 <p class="card-text timeline-pre">{{ $slot }}</p>
-                <p class="card-text text-muted mt-1"><i>am</i> {{ $time ?? '' }} von {{ $author ?? '' }}</p>
             </div>
         </div>
     </div>
