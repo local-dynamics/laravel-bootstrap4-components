@@ -1,12 +1,21 @@
-<label class="custom-control custom-checkbox">
-    <input class="custom-control-input {{ $class ?? '' }}"
+@php
+    $id = $id ?? 'bsComp_chkbx_' . mt_rand(0,10000);
+@endphp
+<div class="custom-control custom-checkbox">
+    <input class="custom-control-input"
            type="checkbox"
+           id="{{ $id }}"
            value="{{ empty(trim($slot)) ? '1': trim($slot) }}"
-           @isset($id) id="{{ $id }}" @endisset
-           @isset($name) name="{{ $name }}" @endisset
-           @istrue($checked) checked="checked" @endistrue
-           @isset($style) style="{{ $style }}" @endisset
+           @isset($name)
+           name="{{ $name }}"
+           @endisset
+           @if($checked ?? false)
+           checked="checked"
+           @endif
+           @isset($style)
+           style="{{ $style }}"
+        @endisset
     >
-    <span class="custom-control-indicator"></span>
-    <span class="custom-control-description">{{ $label ?? '' }}</span>
-</label>
+    <label class="custom-control-label"
+           for="{{ $id }}">{{ $label ?? '' }}</label>
+</div>
