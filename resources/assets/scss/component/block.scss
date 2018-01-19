@@ -10,6 +10,10 @@ div.block-group {
 
         div.block-right {
             min-height: 35px;
+
+            & > span {
+                width: 100%;
+            }
         }
 
         &:nth-child(even) {
