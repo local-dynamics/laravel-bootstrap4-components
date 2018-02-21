@@ -7,6 +7,7 @@ use Illuminate\Support\ServiceProvider;
 
 class BootstrapComponentsServiceProvider extends ServiceProvider
 {
+
     /**
      * Bootstrap the application services.
      */
@@ -15,20 +16,29 @@ class BootstrapComponentsServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'bsComp');
 
         if ($this->app->runningInConsole()) {
-            $this->publishes([
-                __DIR__.'/../resources/views' => resource_path('views/vendor/bsComp'),
-            ], 'views');
+            $this->publishes(
+                [__DIR__.'/../resources/views' => resource_path('views/vendor/bsComp'),],
+                'views'
+            );
         }
 
-        $tabHelper = new class() {
+        $tabHelper = new class()
+        {
+
             public $active = true;
         };
-        \View::composer('bsComp::tabs', function ($view) use ($tabHelper) {
-            $view->with('tabHelper', $tabHelper);
-        });
-        \View::composer('bsComp::tab', function ($view) use ($tabHelper) {
-            $view->with('tabHelper', $tabHelper);
-        });
+        \View::composer(
+            'bsComp::tabs',
+            function ($view) use ($tabHelper) {
+                $view->with('tabHelper', $tabHelper);
+            }
+        );
+        \View::composer(
+            'bsComp::tab',
+            function ($view) use ($tabHelper) {
+                $view->with('tabHelper', $tabHelper);
+            }
+        );
     }
 
     /**
@@ -37,5 +47,6 @@ class BootstrapComponentsServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->register(BladeDirectivesServiceProvider::class);
+        $this->app->singleton('bsCompIndexer', function () { return new Indexer(); });
     }
 }
