@@ -1,5 +1,5 @@
 <?php
-$id = $id ?? 'input-date-' . mt_rand(10000000000, 99999999999);
+$id = $id ?? 'input-date-' . app('bsCompIndexer')->next();
 $format = $format ?? 'YYYY-MM-DD';
 $placeholder = $placeholder ?? $format;
 ?>
@@ -24,8 +24,8 @@ $placeholder = $placeholder ?? $format;
             "showCustomRangeLabel":            false,
             "autoUpdateInput":                 false,
             "autoApply":                       true,
-            @isset($startDate)"startDate":     "{{$startDate}}", @endisset
-            @isset($endDate)"endDate": "{{$endDate}}", @endisset
+            @isset($startDate)"startDate":     "{{$startDate}}",  @endisset
+            @isset($endDate)"endDate":         "{{$endDate}}",    @endisset
             "locale":                          {
                 "format":           "{{$format}}",
                 "separator":        " - ",

@@ -1,5 +1,5 @@
 <?php
-$id = $id ?? 'input-date-' . mt_rand(10000000000, 99999999999);
+$id = $id ?? 'input-date-' . app('bsCompIndexer')->next();
 $format = $format ?? 'YYYY-MM-DD HH:mm:ss';
 $placeholder = $placeholder ?? $format;
 ?>
