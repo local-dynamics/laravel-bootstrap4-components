@@ -7,7 +7,6 @@ use Illuminate\Support\ServiceProvider;
 
 class BootstrapComponentsServiceProvider extends ServiceProvider
 {
-
     /**
      * Bootstrap the application services.
      */
@@ -17,14 +16,12 @@ class BootstrapComponentsServiceProvider extends ServiceProvider
 
         if ($this->app->runningInConsole()) {
             $this->publishes(
-                [__DIR__.'/../resources/views' => resource_path('views/vendor/bsComp'),],
+                [__DIR__.'/../resources/views' => resource_path('views/vendor/bsComp')],
                 'views'
             );
         }
 
-        $tabHelper = new class()
-        {
-
+        $tabHelper = new class() {
             public $active = true;
         };
         \View::composer(
@@ -47,6 +44,8 @@ class BootstrapComponentsServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->register(BladeDirectivesServiceProvider::class);
-        $this->app->singleton('bsCompIndexer', function () { return new Indexer(); });
+        $this->app->singleton('bsCompIndexer', function () {
+            return new Indexer();
+        });
     }
 }
