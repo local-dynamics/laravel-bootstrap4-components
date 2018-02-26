@@ -1,12 +1,11 @@
 <?php
-$id = $id ?? 'input-date-'.app('bsCompIndexer')->next();
+$id = $id ?? 'input-date-' . app('bsCompIndexer')->next();
 $format = $format ?? 'YYYY-MM-DD';
 $placeholder = $placeholder ?? $format;
 ?>
 <div class="input-group">
     <div class="input-group-prepend">
-        <span class="input-group-prepend"
-              id="{{ $id }}-addon1"><span class="glyphicons glyphicons-calendar"></span></span>
+        <span class="input-group-text" id="{{ $id }}-addon1"><span class="glyphicons glyphicons-calendar"></span></span>
     </div>
     <input class="form-control {{ $class ?? '' }}"
            value="{{ $slot ?? '' }}"
@@ -21,15 +20,15 @@ $placeholder = $placeholder ?? $format;
 <script>
     (function() {
         var config = {
-            "singleDatePicker":            true,
-            "showDropdowns":               true,
-            "showISOWeekNumbers":          true,
-            "showCustomRangeLabel":        false,
-            "autoUpdateInput":             false,
-            "autoApply":                   true,
-            @isset($startDate)"startDate": "{{$startDate}}", @endisset
-                @isset($endDate)"endDate": "{{$endDate}}", @endisset
-            "locale":                      {
+            "singleDatePicker":                true,
+            "showDropdowns":                   true,
+            "showISOWeekNumbers":              true,
+            "showCustomRangeLabel":            false,
+            "autoUpdateInput":                 false,
+            "autoApply":                       true,
+            @isset($startDate)"startDate":     "{{$startDate}}",  @endisset
+            @isset($endDate)"endDate":         "{{$endDate}}",    @endisset
+            "locale":                          {
                 "format":           "{{$format}}",
                 "separator":        " - ",
                 "applyLabel":       "Ok",

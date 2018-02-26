@@ -5,7 +5,7 @@ $placeholder = $placeholder ?? $format;
 ?>
 <div class="input-group">
     <div class="input-group-prepend">
-        <span class="input-group-prepend" id="{{ $id }}-addon1"><span class="glyphicons glyphicons-clock"></span></span>
+        <span class="input-group-text" id="{{ $id }}-addon1"><span class="glyphicons glyphicons-clock"></span></span>
     </div>
     <input class="form-control {{ $class ?? '' }}"
            value="{{ $slot ?? '' }}"
