@@ -4,7 +4,9 @@ $format = $format ?? 'YYYY-MM-DD HH:mm:ss';
 $placeholder = $placeholder ?? $format;
 ?>
 <div class="input-group">
-    <span class="input-group-addon" id="{{ $id }}-addon1"><span class="glyphicons glyphicons-clock"></span></span>
+    <div class="input-group-prepend">
+        <span class="input-group-prepend" id="{{ $id }}-addon1"><span class="glyphicons glyphicons-clock"></span></span>
+    </div>
     <input class="form-control {{ $class ?? '' }}"
            value="{{ $slot ?? '' }}"
            id="{{ $id }}"
