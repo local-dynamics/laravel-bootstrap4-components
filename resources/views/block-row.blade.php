@@ -19,7 +19,7 @@
         <div class="text-truncate"
              @isset($labelTooltip) title="{{ $labelTooltip }}" data-toggle="tooltip" data-placement="top" @endisset
         >
-            {{ $label ?? '' }}
+            {!! $label ?? '' !!}
         </div>
     </div>
     <div class="block-right col d-flex align-items-center px-2 py-1">

@@ -13,7 +13,7 @@
                        role="tab"
                        aria-controls="{{ $tabId }}"
                        aria-expanded="true"
-                    >{{ $tabLabel }}</a>
+                    >{!! $tabLabel !!}</a>
                 </li>
             @endforeach
         </ul>
