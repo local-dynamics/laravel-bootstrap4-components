@@ -1,9 +1,7 @@
 @php
-    reset($tabs);
-    $tabHelper->activeTabs[] = key($tabs);
+$id = $id ?? 'tabs-' . mt_rand(0, 9999999999);
 @endphp
-<div class="card card-tabs {{ $class ?? '' }}"
-     @isset($id) id="{{ $id }}" @endisset
+<div class="card card-tabs {{ $class ?? '' }}" id="{{ $id }}"
      @isset($style) style="{{ $style }}" @endisset
 >
     <div class="card-header ">
@@ -26,3 +24,12 @@
         {{ $slot }}
     </div>
 </div>
+<script>
+    (function() {
+        var tabs = document.querySelectorAll('#{{ $id }} .tab-pane:not(:first-child)');
+        for(var i = 0; i < tabs.length; i++) {
+            tabs[i].classList.remove('active');
+            tabs[i].classList.remove('show');
+        }
+    })();
+</script>

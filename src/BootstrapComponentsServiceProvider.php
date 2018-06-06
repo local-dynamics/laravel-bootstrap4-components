@@ -20,22 +20,6 @@ class BootstrapComponentsServiceProvider extends ServiceProvider
                 'views'
             );
         }
-
-        $tabHelper = new class() {
-            public $activeTabs = [];
-        };
-        \View::composer(
-            'bsComp::tabs',
-            function ($view) use ($tabHelper) {
-                $view->with('tabHelper', $tabHelper);
-            }
-        );
-        \View::composer(
-            'bsComp::tab',
-            function ($view) use ($tabHelper) {
-                $view->with('tabHelper', $tabHelper);
-            }
-        );
     }
 
     /**

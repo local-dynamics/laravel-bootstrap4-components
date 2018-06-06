@@ -1,10 +1,6 @@
-@php
-    $active = in_array($key, $tabHelper->activeTabs);
-    $tabHelper->active = false;
-@endphp
 <div class="
         tab-pane
-        @if($active ?? false) show active @endif
+        show active
         {{ $class ?? '' }}
      "
      id="{{ $key }}"
