@@ -1,3 +1,7 @@
+@php
+    reset($tabs);
+    $tabHelper->activeTabs[] = key($tabs);
+@endphp
 <div class="card card-tabs {{ $class ?? '' }}"
      @isset($id) id="{{ $id }}" @endisset
      @isset($style) style="{{ $style }}" @endisset
@@ -22,8 +26,3 @@
         {{ $slot }}
     </div>
 </div>
-
-@php
-    // Reset tabHelper
-    $tabHelper->active = true;
-@endphp

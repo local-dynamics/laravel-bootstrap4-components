@@ -1,5 +1,5 @@
 @php
-    $active = $tabHelper->active;
+    $active = in_array($key, $tabHelper->activeTabs);
     $tabHelper->active = false;
 @endphp
 <div class="

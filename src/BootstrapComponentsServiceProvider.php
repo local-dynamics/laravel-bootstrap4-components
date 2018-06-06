@@ -22,7 +22,7 @@ class BootstrapComponentsServiceProvider extends ServiceProvider
         }
 
         $tabHelper = new class() {
-            public $active = true;
+            public $activeTabs = [];
         };
         \View::composer(
             'bsComp::tabs',
