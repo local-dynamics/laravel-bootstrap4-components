@@ -3,13 +3,13 @@ div.block-group {
 
     div.row.block-row {
         div.block-left {
-            min-height:       35px;
+            min-height:       1rem;
             font-weight:      600;
             background-color: rgba(0, 111, 157, 0.05);
         }
 
         div.block-right {
-            min-height: 35px;
+            min-height: 1rem;
 
             & > span {
                 width: 100%;
