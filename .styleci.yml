@@ -1,0 +1,28 @@
+php:
+  preset: laravel
+
+  risky: true
+
+  enabled:
+    - concat_with_spaces
+
+  disabled:
+    - concat_without_spaces
+
+  finder:
+    exclude:
+      - modules
+      - node_modules
+      - storage
+      - vendor
+
+    name:
+      - "*.php"
+
+    not-name:
+      - "*.blade.php"
+      - ".phpstorm.meta.php"
+      - "_ide_helper.php"
+      
+css: true
+js: true
