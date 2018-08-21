@@ -2,8 +2,8 @@
 
 namespace LocalDynamics\Bootstrap4Components;
 
-use Appstract\BladeDirectives\BladeDirectivesServiceProvider;
 use Illuminate\Support\ServiceProvider;
+use Appstract\BladeDirectives\BladeDirectivesServiceProvider;
 
 class BootstrapComponentsServiceProvider extends ServiceProvider
 {
@@ -12,11 +12,11 @@ class BootstrapComponentsServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'bsComp');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'bsComp');
 
         if ($this->app->runningInConsole()) {
             $this->publishes(
-                [__DIR__.'/../resources/views' => resource_path('views/vendor/bsComp')],
+                [__DIR__ . '/../resources/views' => resource_path('views/vendor/bsComp')],
                 'views'
             );
         }
