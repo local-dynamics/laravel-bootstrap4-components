@@ -1,5 +1,5 @@
 @php
-    $id = $id ?? 'bsComp_chkbx_' . app('bsCompIndexer')->next();
+    $id = $id ?? 'bsComp_chkbx_' . incrementedInt();
 @endphp
 <div class="custom-control custom-checkbox">
     <input

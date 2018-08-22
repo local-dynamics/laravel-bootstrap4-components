@@ -2,16 +2,19 @@
 
 namespace LocalDynamics\Bootstrap4Components;
 
-use Illuminate\Support\ServiceProvider;
 use Appstract\BladeDirectives\BladeDirectivesServiceProvider;
+use Illuminate\Support\ServiceProvider;
 
 class BootstrapComponentsServiceProvider extends ServiceProvider
 {
+
     /**
      * Bootstrap the application services.
      */
     public function boot()
     {
+        require_once __DIR__ . '/functions.php';
+
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'bsComp');
 
         if ($this->app->runningInConsole()) {
@@ -28,8 +31,5 @@ class BootstrapComponentsServiceProvider extends ServiceProvider
     public function register()
     {
         $this->app->register(BladeDirectivesServiceProvider::class);
-        $this->app->singleton('bsCompIndexer', function () {
-            return new Indexer();
-        });
     }
 }

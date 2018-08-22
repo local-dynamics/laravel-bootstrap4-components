@@ -1,5 +1,5 @@
 <?php
-$id = $id ?? 'input-date-' . app('bsCompIndexer')->next();
+$id = $id ?? 'input-date-' . incrementedInt();
 $format = $format ?? 'YYYY-MM-DD';
 $placeholder = $placeholder ?? $format;
 ?>
