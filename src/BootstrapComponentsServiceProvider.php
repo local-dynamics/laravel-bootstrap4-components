@@ -8,9 +8,6 @@ use Illuminate\Support\ServiceProvider;
 class BootstrapComponentsServiceProvider extends ServiceProvider
 {
 
-    /**
-     * Bootstrap the application services.
-     */
     public function boot()
     {
         require_once __DIR__ . '/functions.php';
@@ -25,9 +22,6 @@ class BootstrapComponentsServiceProvider extends ServiceProvider
         }
     }
 
-    /**
-     * Register the application services.
-     */
     public function register()
     {
         $this->app->register(BladeDirectivesServiceProvider::class);
