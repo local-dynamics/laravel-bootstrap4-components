@@ -14,10 +14,7 @@ class BootstrapComponentsServiceProvider extends ServiceProvider
         $this->loadViewsFrom(__DIR__ . '/../resources/views', 'bsComp');
 
         if ($this->app->runningInConsole()) {
-            $this->publishes(
-                [__DIR__ . '/../resources/views' => resource_path('views/vendor/bsComp')],
-                'views'
-            );
+            $this->publishes([__DIR__ . '/../resources/views' => resource_path('views/vendor/bsComp')], 'views');
         }
     }
 
