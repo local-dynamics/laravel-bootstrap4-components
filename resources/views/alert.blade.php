@@ -15,5 +15,5 @@
     </button>
     @endistrue
 
-    {{ $slot }}
+    {!! $slot !!}
 </div>
