@@ -12,6 +12,7 @@
         @isset($id) id="{{ $id }}" @endisset
         @isset($class) class="{{ $class }}" @endisset
         @isset($style) style="{{ $style }}" @endisset
+        @isset($fileUpload) enctype="multipart/form-data" @endisset
 >
     @if(($addCsrf ?? true) && $method != 'GET') {{ csrf_field() }} @endif
     @istrue($methodOverwrite) {{ method_field($methodOverwrite) }} @endistrue
