@@ -15,6 +15,6 @@
         @isset($fileUpload) enctype="multipart/form-data" @endisset
 >
     @if(($addCsrf ?? true) && $method != 'GET') {{ csrf_field() }} @endif
-    @istrue($methodOverwrite) {{ method_field($methodOverwrite) }} @endistrue
+    @if($methodOverwrite) {{ method_field($methodOverwrite) }} @endif
     {{ $slot }}
 </form>
