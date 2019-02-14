@@ -11,7 +11,7 @@
         $labelStyle = 'align-items-center';
     }
 @endphp
-<div class="block-row row rounded {{ $class ?? '' }} d-flex"
+<div class="block-row row d-flex {{ $class ?? '' }}"
      @isset($id) id="{{ $id }}" @endisset
      @isset($style) style="{{ $style }}" @endisset
 >

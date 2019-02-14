@@ -1,7 +1,29 @@
+.block-title {
+    padding-left: #{map-get($spacers, 2)};
+}
+
 div.block-group {
     border: $card-border-width solid $card-border-color;
 
     div.row.block-row {
+        &:nth-child(even) {
+            background-color: $bg-even;
+        }
+
+        &:nth-child(odd) {
+            background-color: $bg-uneven;
+        }
+
+        &:last-child {
+            border-bottom-left-radius: $border-radius;
+            border-bottom-right-radius: $border-radius;
+        }
+
+        &:first-child {
+            border-top-left-radius: $border-radius;
+            border-top-right-radius: $border-radius;
+        }
+
         div.block-left {
             min-height: 1rem;
             font-weight: 600;
@@ -15,14 +37,6 @@ div.block-group {
                 width: 100%;
             }
         }
-
-        &:nth-child(even) {
-            background-color: $bg-even;
-        }
-
-        &:nth-child(odd) {
-            background-color: $bg-uneven;
-        }
     }
 
     @for $i from 1 through 60 {
@@ -35,4 +49,8 @@ div.block-group {
 
 .card > .block-group {
     border: none;
+}
+
+.block-group + .block-title {
+    margin-top: #{map-get($spacers, 3)};
 }
