@@ -28,8 +28,10 @@ $placeholder = $placeholder ?? $format;
             "autoApply":                       true,
             "timePicker":                      true,
             "timePicker24Hour":                true,
-            @isset($startDate)"startDate":     "{{$startDate}}", @endisset
+            @isset($startDate)"startDate": "{{$startDate}}", @endisset
             @isset($endDate)"endDate": "{{$endDate}}", @endisset
+            @isset($minDate)"minDate": "{{$minDate}}", @endisset
+            @isset($maxDate)"maxDate": "{{$maxDate}}", @endisset
             "locale":                          {
                 "format":           "{{$format}}",
                 "separator":        " - ",
