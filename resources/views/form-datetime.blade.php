@@ -3,7 +3,7 @@ $id = $id ?? 'input-date-' . incrementedInt();
 $format = $format ?? 'YYYY-MM-DD HH:mm:ss';
 $placeholder = $placeholder ?? $format;
 ?>
-<div class="input-group">
+<div class="input-group {{ $groupClass ?? '' }}"  @isset($groupStyle) style="{{ $groupStyle }}" @endisset>
     <div class="input-group-prepend">
         <span class="input-group-text" id="{{ $id }}-addon1"><i class="far fa-clock"></i></span>
     </div>
