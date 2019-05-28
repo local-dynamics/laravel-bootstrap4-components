@@ -10,7 +10,7 @@
             @endisset
             type="checkbox"
             id="{{ $id }}"
-            value="{{ empty(trim($slot)) ? '1': trim($slot) }}"
+            value="{{ strlen(trim($slot)) == 0 ? '1' : trim($slot) }}"
             @isset($name)
             name="{{ $name }}"
             @endisset
