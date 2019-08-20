@@ -3,7 +3,7 @@ $id = $id ?? 'input-date-' . incrementedInt();
 $format = $format ?? 'YYYY-MM-DD HH:mm:ss';
 $placeholder = $placeholder ?? $format;
 ?>
-<div class="input-group {{ $groupClass ?? '' }}"  @isset($groupStyle) style="{{ $groupStyle }}" @endisset>
+<div class="input-group {{ $groupClass ?? '' }}" @isset($groupStyle) style="{{ $groupStyle }}" @endisset>
     <div class="input-group-prepend">
         <span class="input-group-text" id="{{ $id }}-addon1"><i class="far fa-clock"></i></span>
     </div>
@@ -18,55 +18,56 @@ $placeholder = $placeholder ?? $format;
     >
 </div>
 <script>
-    (function() {
-        var config = {
-            "singleDatePicker":                true,
-            "showDropdowns":                   true,
-            "showISOWeekNumbers":              true,
-            "showCustomRangeLabel":            false,
-            "autoUpdateInput":                 false,
-            "autoApply":                       true,
-            "timePicker":                      true,
-            "timePicker24Hour":                true,
-            @isset($startDate)"startDate": "{{$startDate}}", @endisset
-            @isset($endDate)"endDate": "{{$endDate}}", @endisset
-            @isset($minDate)"minDate": "{{$minDate}}", @endisset
-            @isset($maxDate)"maxDate": "{{$maxDate}}", @endisset
-            "locale":                          {
-                "format":           "{{$format}}",
-                "separator":        " - ",
-                "applyLabel":       "Ok",
-                "cancelLabel":      "Abbrechen",
-                "fromLabel":        "Von",
-                "toLabel":          "Bis",
-                "customRangeLabel": "Custom",
-                "weekLabel":        "W",
-                "daysOfWeek":       [
-                    "So",
-                    "Mo",
-                    "Di",
-                    "Mi",
-                    "Do",
-                    "Fr",
-                    "Sa"
-                ]
-            }
-        };
+(function () {
+  var config = {
+    "singleDatePicker": true,
+    "showDropdowns": true,
+    "showISOWeekNumbers": true,
+    "showCustomRangeLabel": false,
+    "autoUpdateInput": true,
+    "autoApply": true,
+    "timePicker": true,
+    "timePicker24Hour": true,
+    "buttonClasses": "d-none",
+@isset($startDate)    "startDate": "{{$startDate}}",@endisset
+@isset($endDate)    "endDate": "{{$endDate}}",@endisset
+@isset($minDate)    "minDate": "{{$minDate}}",@endisset
+@isset($maxDate)    "maxDate": "{{$maxDate}}",@endisset
+    "locale": {
+      "format": "{{$format}}",
+      "separator": " - ",
+      "applyLabel": "Ok",
+      "cancelLabel": "Abbrechen",
+      "fromLabel": "Von",
+      "toLabel": "Bis",
+      "customRangeLabel": "Custom",
+      "weekLabel": "W",
+      "daysOfWeek": [
+        "So",
+        "Mo",
+        "Di",
+        "Mi",
+        "Do",
+        "Fr",
+        "Sa"
+      ]
+    }
+  };
 
-        try {
-            var $input = $('#{{$id}}');
-            $input.daterangepicker(config);
-            $input.on('apply.daterangepicker', function(ev, picker) {
-                $input.val(picker.startDate.format('{{ $format }}'));
-            });
-        } catch (e) {
-            document.addEventListener("DOMContentLoaded", function() {
-                var $input = $('#{{$id}}');
-                $input.daterangepicker(config);
-                $input.on('apply.daterangepicker', function(ev, picker) {
-                    $input.val(picker.startDate.format('{{ $format }}'));
-                });
-            });
-        }
-    })();
+  try {
+    var $input = $('#{{$id}}');
+    $input.daterangepicker(config);
+    $input.on('apply.daterangepicker', function(ev, picker) {
+      $input.val(picker.startDate.format('{{ $format }}'));
+    });
+  } catch (e) {
+    document.addEventListener("DOMContentLoaded", function () {
+      var $input = $('#{{$id}}');
+      $input.daterangepicker(config);
+      $input.on('apply.daterangepicker', function(ev, picker) {
+        $input.val(picker.startDate.format('{{ $format }}'));
+      });
+    });
+  }
+})();
 </script>
