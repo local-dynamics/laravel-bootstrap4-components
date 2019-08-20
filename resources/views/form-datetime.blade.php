@@ -16,6 +16,9 @@ $placeholder = $placeholder ?? $format;
            @isset($name) name="{{ $name }}" @endisset
            @isset($style) style="{{ $style }}" @endisset
     >
+    <div class="input-group-append">
+        <button class="btn btn-outline-secondary" type="button" id="{{ $id }}-addon2" onclick="$('#{{ $id}}').val('');"><i class="far fa-times"></i></button>
+    </div>
 </div>
 <script>
 (function () {
@@ -28,7 +31,6 @@ $placeholder = $placeholder ?? $format;
     "autoApply": true,
     "timePicker": true,
     "timePicker24Hour": true,
-    "buttonClasses": "d-none",
 @isset($startDate)    "startDate": "{{$startDate}}",@endisset
 @isset($endDate)    "endDate": "{{$endDate}}",@endisset
 @isset($minDate)    "minDate": "{{$minDate}}",@endisset
