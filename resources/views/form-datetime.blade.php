@@ -27,7 +27,7 @@ $placeholder = $placeholder ?? $format;
     "showDropdowns": true,
     "showISOWeekNumbers": true,
     "showCustomRangeLabel": false,
-    "autoUpdateInput": true,
+    "autoUpdateInput": false,
     "autoApply": true,
     "timePicker": true,
     "timePicker24Hour": true,
