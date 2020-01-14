@@ -4,7 +4,7 @@ $id = $id ?? 'tabs-' . mt_rand(0, 9999999999);
 <div class="card card-tabs {{ $class ?? '' }}" id="{{ $id }}"
      @isset($style) style="{{ $style }}" @endisset
 >
-    <div class="card-header ">
+    <div class="card-header">
         <ul class="nav nav-tabs card-header-tabs" role="tablist">
             @foreach($tabs as $tabId => $tabLabel)
                 <li class="nav-item">

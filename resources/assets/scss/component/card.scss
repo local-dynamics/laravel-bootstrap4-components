@@ -1,17 +1,30 @@
-.card-tabs {
-    .card-header {
-        background-color: #cccccc;
-        border-top: #888888 1px solid;
-        border-left: #888888 1px solid;
+.card-tabs-vertical {
+    display: flex;
+
+    .card-header-vertical {
+        background-color: rgba(0, 0, 0, 0.1);
         border-right: #888888 1px solid;
+
+        .nav-pills {
+            .nav-item {
+                .nav-link {
+                    border-bottom: $card-border-width solid $card-border-color;
+                    border-radius: 0;
+                    color: #000000;
+                    border-color: rgba(0, 100, 118, 0.6);
+
+                    &.active {
+                        background-color: #FFFFFF;
+                        border-right: $card-border-width solid #ffffff;
+                        margin-right: -1px;
+                    }
+                }
+            }
+        }
     }
 
-    .card-header-tabs {
-        .nav-link {
-            color: black;
-        }
-        .nav-link.active {
-            color: black;
-        }
+    .tab-content {
+        border: 0;
+        border-radius: 0;
     }
 }
