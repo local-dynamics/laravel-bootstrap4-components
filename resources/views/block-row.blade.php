@@ -16,8 +16,8 @@
      @isset($style) style="{{ $style }}" @endisset
 >
     <div class="block-left d-flex px-2 py-1 {{ $labelStyle }}">
-        <div class="text-truncate @isset($labelTooltip) jqtt @endisset"
-             @isset($labelTooltip) title="{{ $labelTooltip }}" @endisset
+        <div class="text-truncate @if(isset($labelTooltip) && strlen($labelTooltip)) jqtt @endisset"
+             @if(isset($labelTooltip) && strlen($labelTooltip)) title="{{ $labelTooltip }}" @endisset
         >
             {!! $label ?? '' !!}
         </div>
