@@ -22,7 +22,8 @@
     },
     "require": {
         "php": ">=7.1",       
-        "laravel/framework": "^7.0|^8.0"
+        "laravel/framework": "^7.0|^8.0",
+                "appstract/laravel-blade-directives": "^1.6"
     },
     "config": {
         "sort-packages": true
