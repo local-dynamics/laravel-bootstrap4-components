@@ -20,6 +20,6 @@ class BootstrapComponentsServiceProvider extends ServiceProvider
 
     public function register()
     {
-      //  $this->app->register(BladeDirectivesServiceProvider::class);
+      $this->app->register(BladeDirectivesServiceProvider::class);
     }
 }
